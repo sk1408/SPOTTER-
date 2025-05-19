@@ -1,0 +1,46 @@
+
+{
+  "appId": "com.markettrend.prediction",
+  "productName": "Market Trend Prediction Tool",
+  "directories": {
+    "output": "release/"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*"
+  ],
+  "mac": {
+    "category": "public.app-category.finance",
+    "target": ["dmg", "zip"],
+    "icon": "public/favicon.ico"
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      },
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/favicon.ico"
+  },
+  "linux": {
+    "target": ["AppImage", "deb"],
+    "category": "Finance"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Market Trend Prediction",
+    "artifactName": "Market-Trend-Prediction-Setup-${version}.${ext}",
+    "menuCategory": "Finance Tools",
+    "runAfterFinish": true,
+    "installerIcon": "public/favicon.ico",
+    "uninstallerIcon": "public/favicon.ico"
+  }
+}
