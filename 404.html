@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Page Redirection</title>
+  <script type="text/javascript">
+    // Redirect to the main page with the path as a hash
+    var pathSegments = window.location.pathname.split('/');
+    var repoName = pathSegments[1];
+    var remainingPath = pathSegments.slice(2).join('/');
+    
+    window.location.replace(
+      window.location.protocol + '//' + window.location.hostname + 
+      (window.location.port ? ':' + window.location.port : '') +
+      '/' + repoName + '/#/' + remainingPath
+    );
+  </script>
+</head>
+<body>
+  Redirecting to main page...
+</body>
+</html>
